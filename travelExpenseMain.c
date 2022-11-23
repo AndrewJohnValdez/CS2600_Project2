@@ -1,7 +1,13 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "expenses.h"
-
+/*
+void test(int expected, int actual, const char* testName) {
+    if(expected == actual) {
+        printf("\n%s PASSED", testName);
+    }
+}
+*/
 int main(void)
 {
     int numberOfDays;
@@ -12,6 +18,7 @@ int main(void)
     scanf("%d", &departure);
     printf("Time of arrival on the last day in military time without ':':");
     scanf("%d", &arrival);
-    printf("Total hours spent on the Business Trip: %d Hours\n", totalHours(departure, arrival, numberOfDays));
+    int tHours = totalHours(departure, arrival, numberOfDays);
+    printf("Total hours spent on the Business Trip: %d Hours\n", tHours);
     return EXIT_SUCCESS;
 }
