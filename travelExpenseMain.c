@@ -14,11 +14,15 @@ int main(void)
     int departure, arrival;
     printf("Total Number of Days spent withour arrival and deperture days: ");
     scanf("%d", &numberOfDays);
-    printf("Time of deperture on the first day (in military time without ':':");
+    printf("Time of deperture on the first day (in military time jfjsaldfja in 0000:");
     scanf("%d", &departure);
-    printf("Time of arrival on the last day in military time without ':':");
+    printf("Time of arrival on the last day in military time in 0000:");
     scanf("%d", &arrival);
     int tHours = totalHours(departure, arrival, numberOfDays);
     printf("Total hours spent on the Business Trip: %d Hours\n", tHours);
+    /*
+    int hours = tHours % numberOfDays;
+    printf("Which is converted into %d Days and %d Hours\n", numberOfDays, hours);
+    */
     return EXIT_SUCCESS;
 }

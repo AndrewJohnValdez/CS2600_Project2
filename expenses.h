@@ -1,6 +1,8 @@
 
 #ifndef EXPENSES_H
 #define EXPENSES_H
+#include <stdlib.h>
+#include <stdio.h>
 
 extern double milageCalc(double miles);
 extern double parkingFeesCalc(double parking);
@@ -12,8 +14,8 @@ extern double parkingFeesCalc(double par);
 
 int totalHours(int deperture, int arrival, int days)
 {
-    int depertureDayHours = 2400 - deperture;
-    return (days * 24) + (depertureDayHours / 100) + (arrival / 100);
+    printf("Days %d\n", days);
+    return (days * 24) + (deperture / 100) + (arrival / 100);
 }
 
 #endif // EXPENSES_H
