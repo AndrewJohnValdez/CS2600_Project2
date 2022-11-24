@@ -5,11 +5,47 @@
 
 double airfareAmount()
 {
+    double airfareTotalCost = 0;
+    int airfareTrips;
     //ask user for amount of times of round trip airfare
+    while(1)
+    {
+        printf("Will there be any round-trip airfare? if so how many trips are planned?: \n");
+        scanf("%d", &airfareTrips); //get user input int
+        getchar(); //catch unwanted characters
+        if(airfareTrips > 0)
+        {
+            break;
+        }
+        else
+        {
+            printf("INVALID INPUT\n");
+        }
+    }
     //use a loop to ask and add to a total to be returned as the total cost of airfare
+    for(int i = 0; i < airfareTrips; i++)
+    {
+        double airfareCost = 0.0;
+        while(1)
+        {
+            printf("Input the airfare cost of trip %d:\n", i+1);
+            scanf("%lf", &airfareCost); //get user input int
+            getchar(); //catch unwanted characters
+            if(airfareCost > 0)
+            {
+                break;
+            }
+            else
+            {
+                printf("INVALID INPUT\n");
+            }
+        }
+        airfareTotalCost += airfareCost;
+    }
     printf("test airfare\n");
-    return 0.0;
-} 
+    return airfareTotalCost; 
+}
+
 double taxiAmount()
 {
     //ask user for amount of days to determine company allowed amount
