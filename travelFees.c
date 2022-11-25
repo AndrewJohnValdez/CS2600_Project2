@@ -3,6 +3,9 @@
 #include <stdlib.h>
 #include "travelFees.h"
 
+//int getAmount(), function that gets user inputted int, for modifying code for unit testing
+//double** getCost(int amount), function that gets user inputted doubles and turns it into array, for modifying code for unit testing
+//modify existing code airfareAmount, taxiAmount, and carRental, to take in double arrays
 //airfareAmount functon that asks user for amount of round-trip airfares made and its price and returns total cost of airfares 
 double airfareAmount()
 {
