@@ -4,11 +4,11 @@
 int main()
 {
     printf("testing and outputting functions:\n");
-    double airfareTest = airfareAmount();
-    double carRentalTest = carRental();
-    double taxiAmountTest = taxiAmount();
-    printf("airfare: %lf\n", airfareTest);
-    printf("car rental: %lf\n", carRentalTest);
-    printf("taxi amount: %lf\n", taxiAmountTest);
+    double testAirfare = airfareAmount();
+    double testCarRental = carRental();
+    double testTaxi = taxiAmount();
+    printf("Airfare: %lf\n", testAirfare);
+    printf("Car Rental: %lf\n", testCarRental);
+    printf("Taxi Fares: %lf\n", testTaxi);
     return 0;
 }
