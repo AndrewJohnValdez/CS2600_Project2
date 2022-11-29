@@ -23,12 +23,14 @@ double totalHours(int deperture, int arrival, int days)
         depertureMinute = 60 - convertMinute;
     }
     
-    printf("\nDepertureMinute: %d and DepertureHour %d\n", depertureMinute, depertureHour);
+    printf("\nDeperture Minute: %d\n", depertureMinute);
+    printf("Deperture Hour: %d\n", depertureHour);
     double depertureDayHours = (double)(depertureHour + depertureMinute * 0.01);
     printf("deperture Day Hours: %.2f\n\n", depertureDayHours);
     int arrivalHour = arrival / 100;
     int arrivalMinute = arrival % 100;
-    printf("arrivalMinute: %d and arrivalHour %d\n", arrivalMinute, arrivalHour);
+    printf("Arrival Minute: %d\n", arrivalMinute);
+    printf("Arrival Hour: %d\n", arrivalHour);
     double arrivalDayHours = (double)(arrivalHour + arrivalMinute * 0.01);
 
     printf("Arrival Day Hours: %.2f\n\n", arrivalDayHours);

@@ -15,9 +15,9 @@ int main(void)
     double hourTotal;
     printf("Total Number of Days spent excluding Deperture and Arrival Days: ");
     scanf("%d", &numberOfDays);
-    printf("Time of Deperture-in military time & HH.MM format: ");
+    printf("Time of Deperture in military time (HHMM format): ");
     scanf("%d", &departure);
-    printf("Time of Arrival-in military time & HH.MM format: ");
+    printf("Time of Arrival in military time (HHMM format): ");
     scanf("%d", &arrival);
     hourTotal = totalHours(departure, arrival, numberOfDays);
     printf("Total Hours spent on the Business Trip: %.02f Hours\n\n", hourTotal);
