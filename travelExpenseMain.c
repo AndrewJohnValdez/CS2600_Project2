@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include "expenses.h"
 #include "travelFees.h"
+#include "milesDrivenLodgingParking.h"
 
 void displayResults(void);
 void setTravelValues(void);
@@ -18,6 +19,14 @@ double testAirfare;
 double testCarRental;
 double testTaxi;
 double travelFeesTotal;
+double totalMiles;
+double totalHotelExpense;
+double totalParkingFees;
+double grandTotal;
+double hotelAllowance;
+double parkingAllowance;
+double totalMileDrivenAllowance;
+double totalAllowance;
 
 int main(void) //main should only hold values that must be inputted
 {
@@ -58,14 +67,22 @@ void displayResults(void)
     printf("Airfare   : $ %.2lf\n", testAirfare);
     printf("Car Rental: $ %.2lf\n", testCarRental);
     printf("Taxi Fares: $ %.2lf\n", testTaxi);
+    printf("Total Milages Driven: $ %.2lf\n", totalMiles);
+    printf("Total Lodging Fees: $ %.2lf\n", totalHotelExpense);
+    printf("Taxi Parking Fees: $ %.2lf\n", totalParkingFees);
+    printf("Grand Total Expense: %.2lf\n", grandTotal);
 
-    printf("Parking Fees:\n");
-    printf("Miles Driven:\n");
+    printf("\n\t===============\n");
+    printf("\tTotal Allowance\n");
+    printf("\t===============\n");
+    printf("TOTAL ALLOWANCE : $ %.2lf\n", totalAllowance);
+    printf("\n\t==============\n");
+    printf("\tREIMBURSEMENT\n");
+    printf("\t==============\n");
+    printf("TOTAL REIMBURSEMENT : $ %.2lf\n", (grandTotal- totalAllowance));
+    printf("\t==============\n");
 
-    printf("Total Expenses: %.2lf\n", travelFeesTotal);
-    printf("Total Allowable expenses for the trip:\n");
-    printf("Excess that Must be Reimbursed:\n");
-    printf("Amount Saved if expense were under the total allowed:\n");
+    
 
 /*
     Should display total expense incurred by the person
@@ -79,6 +96,15 @@ void setFareValues(void) {
     testAirfare = airfareAmount();
     testCarRental = carRental();
     testTaxi = taxiAmount();
+    totalMiles = milesDriven();
+    totalHotelExpense = hotelExpense(numberOfDays);
+    totalParkingFees = parkingFee(numberOfDays);
+    grandTotal = testAirfare + testCarRental + testTaxi + totalMiles + totalHotelExpense + totalParkingFees;
+
+    hotelAllowance = (double)numberOfDays * 90.00;
+    parkingAllowance = (double)numberOfDays * 6.00;
+    double totalMileDrivenAllowance = totalMiles;
+    double totalAllowance = hotelAllowance + parkingAllowance + totalMileDrivenAllowance + testAirfare + testCarRental;
 }
 
 void setTravelValues(void) {
