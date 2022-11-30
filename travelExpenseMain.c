@@ -7,6 +7,7 @@
 #include "expenses.h"
 #include "travelFees.h"
 #include "milesDrivenLodgingParking.h"
+#include "otherExp.h"
 
 void displayResults(void);
 void setTravelValues(void);
@@ -27,27 +28,26 @@ double hotelAllowance;
 double parkingAllowance;
 double totalMileDrivenAllowance;
 double totalAllowance;
+double registrationFees;
+double mealTotal;
+double totalReimbursement;
+double totalMilesDrivenAllowance;
+double totalAmountSaved;
 
 int main(void) //main should only hold values that must be inputted
 {
     setTravelValues();
-    setFareValues();
-    displayResults();
+    mealTotal = getMealFees(numberOfDays, departure, arrival);
+    printf("%d",mealTotal);
+    printf("%d", totalReimbursement);
+    printf("%d", totalAllowance);
+    printf("%d", totalAmountSaved);
+    //setTravelValues();
+    //setFareValues();
+    //displayResults();
 
     return EXIT_SUCCESS;
 }
-
-/*
-    display totals:
-
-    total days on trip
-    departure time
-    arrival time
-    total expenses 
-    total allowable expenses
-    total reimbursement
-    total amount saved
-*/
 
 void displayResults(void)
 {
@@ -57,39 +57,25 @@ void displayResults(void)
     
     printf("Departure Time: %d\n", departure);
     printf("Arrival Time: %d\n", arrival);
-    printf("Total Days spent on the Business Trip: %d\n", numberOfDays);
     printf("Total Hours spent on the Business Trip: %.02f Hours\n", hourTotal);
     convertDayAndHour(hourTotal);
 
-    printf("\n\t============\n");
+    printf("\n\t================\n");
     printf("\tExpenses Summary\n");
-    printf("\t============\n");
+    printf("\t================\n");
     printf("Airfare   : $ %.2lf\n", testAirfare);
     printf("Car Rental: $ %.2lf\n", testCarRental);
     printf("Taxi Fares: $ %.2lf\n", testTaxi);
     printf("Total Milages Driven: $ %.2lf\n", totalMiles);
     printf("Total Lodging Fees: $ %.2lf\n", totalHotelExpense);
     printf("Taxi Parking Fees: $ %.2lf\n", totalParkingFees);
-    printf("Grand Total Expense: %.2lf\n", grandTotal);
-
-    printf("\n\t===============\n");
-    printf("\tTotal Allowance\n");
-    printf("\t===============\n");
-    printf("TOTAL ALLOWANCE : $ %.2lf\n", totalAllowance);
-    printf("\n\t==============\n");
-    printf("\tREIMBURSEMENT\n");
-    printf("\t==============\n");
-    printf("TOTAL REIMBURSEMENT : $ %.2lf\n", (grandTotal- totalAllowance));
-    printf("\t==============\n");
-
     
+    printf("TOTAL EXPENSES: %.2lf\n", grandTotal); 
+    printf("TOTAL ALLOWABLE : $ %.2lf\n", totalAllowance);
+    printf("TOTAL REIMBURSEMENT : $ %.2lf\n", totalReimbursement);
+    printf("SAVED AMOUNT : $ %.2lf\n", totalAmountSaved);
 
-/*
-    Should display total expense incurred by the person
-    total allowable expenses for the trip
-    the excess that must be reimbursed by the businessperson if any
-    the amount saved by the businessperson if the expenses were under the total allowed
-*/
+    //Incomplete NEED: meals eatern //must be tested
 }
 
 void setFareValues(void) {
@@ -97,14 +83,19 @@ void setFareValues(void) {
     testCarRental = carRental();
     testTaxi = taxiAmount();
     totalMiles = milesDriven();
+    registrationFees = registrationFee();
     totalHotelExpense = hotelExpense(numberOfDays);
     totalParkingFees = parkingFee(numberOfDays);
-    grandTotal = testAirfare + testCarRental + testTaxi + totalMiles + totalHotelExpense + totalParkingFees;
+    mealTotal = getMealFees(numberOfDays, departure, arrival);
+
+    grandTotal = testAirfare + testCarRental + testTaxi + totalMiles + totalHotelExpense + totalParkingFees + registrationFees;
 
     hotelAllowance = (double)numberOfDays * 90.00;
     parkingAllowance = (double)numberOfDays * 6.00;
-    double totalMileDrivenAllowance = totalMiles;
-    double totalAllowance = hotelAllowance + parkingAllowance + totalMileDrivenAllowance + testAirfare + testCarRental;
+    totalMileDrivenAllowance = totalMiles;
+    totalAllowance = hotelAllowance + parkingAllowance + totalMileDrivenAllowance + testAirfare + testCarRental;
+    totalReimbursement = grandTotal - totalAllowance;
+    totalAmountSaved = totalAllowance - grandTotal; //meal cost can be added through h file implementation
 }
 
 void setTravelValues(void) {
