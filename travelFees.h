@@ -7,11 +7,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-extern int getAmount();                           // Allen's Funciton
-extern double getTotal(double *cost, int length); // Allen's Funciton
-extern double airfareAmount();                    // Allen's Funciton
-extern double taxiAmount();                       // Allen's Funciton
-extern double carRental();                        // Allen's Funciton
+extern int getAmount();                           // Allen's Function
+extern double getTotal(double *cost, int length); // Allen's Function
+extern double airfareAmount();                    // Allen's Function
+extern double taxiAmount();                       // Allen's Function
+extern double carRental();                        // Allen's Function
 
 /* Allen's Implementation */
 
