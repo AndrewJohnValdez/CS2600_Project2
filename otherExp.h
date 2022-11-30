@@ -91,7 +91,7 @@ double getMealFees(int numberOfDays,int departure_time, int arrival_time)
                 totalAmountSaved += meal_fee;
         }
 
-        else if (departure_time >= 18)
+        else if (departure_time >= 1800)
             totalReimbursement += meal_fee;
 
     }
