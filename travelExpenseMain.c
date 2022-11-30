@@ -1,6 +1,11 @@
+/*
+    This File is created by Andrew Valdez
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "expenses.h"
+#include "travelFees.h"
 /*
 Should display total expense incurred by the person
 total allowable expenses for the trip
