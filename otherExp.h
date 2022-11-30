@@ -6,7 +6,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-double total_expenses;
+extern int conferenceFee();
+extern void getMealFees(double &, double, double &, double &, double&, double);
 
 int conferenceFee()
 {
@@ -29,7 +30,7 @@ int conferenceFee()
 
 void getMealFees(double &total_expenses, double departure_time, double &total_allowable_expenses, double &total_reimbursement, double &total_amount_saved, double arrival_time)
 {
-    const double ALLOWABLE_BREAKFAST = 9.00, ALLOWABLE_LUNCH = 12.00,ALLOWABLE_DINNER = 16.00;
+    const double ALLOWABLE_BREAKFAST = 9.00, ALLOWABLE_LUNCH = 12.00, ALLOWABLE_DINNER = 16.00;
     char user_choice;
     double meal_fee;
 
