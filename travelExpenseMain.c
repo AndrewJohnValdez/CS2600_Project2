@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "expenses.h"
+#include "travelFees.h"
 /*
 void test(int expected, int actual, const char* testName) {
     if(expected == actual) {
