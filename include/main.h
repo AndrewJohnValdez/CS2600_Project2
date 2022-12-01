@@ -16,10 +16,7 @@ extern double calculateAllowableExpenses();
 //To be used in otherExp.c
 extern double registrationFee();
 extern double getMealFees();
-extern double mealTotal;
-extern double totalAllowance;
-extern double totalReimbursement;
-extern double totalAmountSaved;
+
 
 //To be used in milesDrivenLodgingParking.c
 extern double parkingFee(int);
