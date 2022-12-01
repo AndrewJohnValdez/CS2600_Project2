@@ -1,8 +1,7 @@
 #include <assert.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include "expenses.h"
-#include "travelFees.h"
+#include "../include/main.h"
 int main()
 {
     printf("Unit Test using different arrays to represent different user input:\n");
