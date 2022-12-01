@@ -74,7 +74,7 @@ void setFareValues(void) {
     testCarRental = carRental();
     testTaxi = taxiAmount();
     totalMiles = milesDriven();
-    //registrationFees = registrationFee();
+    registrationFees = registrationFee();
     totalHotelExpense = hotelExpense(numberOfDays);
     totalParkingFees = parkingFee(numberOfDays);
     mealTotal = getMealFees(departure, arrival);
