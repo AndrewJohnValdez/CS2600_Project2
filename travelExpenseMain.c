@@ -68,9 +68,9 @@ int main(void)
     printf("\t==============\n");
     printf("TOTAL ALLOWANCE : $ %.2lf\n", totalAllowance);
     printf("\n\t============\n");
-    printf("\tTREIMBURSEMENT\n");
+    printf("\tREIMBURSEMENT\n");
     printf("\t==============\n");
     printf("TOTAL REIMBURSEMENT : $ %.2lf\n", (grandTotal- totalAllowance));
-    printf("\t==============\n");
+    printf("\t++++++++++++++++\n");
     return EXIT_SUCCESS;
 }
