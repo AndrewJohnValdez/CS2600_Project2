@@ -3,31 +3,40 @@
 */
 
 
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h> 
 
+/*
 extern double registrationFee();
 extern double getMealFees();
 extern double mealTotal;
 extern double totalAllowance;
 extern double totalReimbursement;
 extern double totalAmountSaved;
+*/
 
-double registrationFee()
+double mealTotal;
+double totalAllowance;
+double totalReimbursement;
+double totalAmountSaved;
+
+float registrationFee()
 {
-    double fees;
+    double fees = 3;
 
     printf("What is the Registration Fee: ");
-    scanf("%d", &fees);
+    scanf("%.2f", &fees);
+
     while (fees < 0) {
         printf("Invalid Entry, Please Try Again\n");
-        scanf("%d", &fees);
+        scanf("%.2lf", &fees);
     }
-    
+    printf("%.2f", fees);
     return fees;
 }
 
-double getMealFees(int numberOfDays,int departure_time, int arrival_time)
+double getMealFees(int departure_time, int arrival_time)
 {
     const double ALLOWABLE_BREAKFAST = 9.00, ALLOWABLE_LUNCH = 12.00, ALLOWABLE_DINNER = 16.00;
     char user_choice;
@@ -36,18 +45,10 @@ double getMealFees(int numberOfDays,int departure_time, int arrival_time)
 
     mealTotal = 0;
 
-    do {
+
     printf("Did you eat a meal upon depature flight? (Y/N): ");
     scanf("%c", user_choice);
-    if (user_choice == 'Y' || user_choice == 'y' || user_choice == 'N' || user_choice == 'n')
-    {
-        key = 1;
-    } else {
-        printf("Invald Input, Try Again\n");
-        scanf("%c", user_choice);
-    }
-    } while(key != 1);
-    printf("\n");
+    
 
     if (user_choice == 'Y' || user_choice == 'y')
     {
@@ -145,4 +146,16 @@ double getMealFees(int numberOfDays,int departure_time, int arrival_time)
         }
     }
 
+}
+
+
+int main(){
+    int dep = 600, arr = 1300;
+    double fee;
+
+    fee = registrationFee();
+    printf("fee is: %.2lf\n", fee);
+    getMealFees(dep, arr);
+
+    return 0;
 }

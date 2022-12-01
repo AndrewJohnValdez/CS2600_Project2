@@ -7,7 +7,7 @@
 #include "expenses.h"
 #include "travelFees.h"
 #include "milesDrivenLodgingParking.h"
-#include "otherExp.h"
+#include "otherExp.c"
 
 void displayResults(void);
 void setTravelValues(void);
@@ -37,7 +37,7 @@ double totalAmountSaved;
 int main(void) //main should only hold values that must be inputted
 {
     setTravelValues();
-    mealTotal = getMealFees(numberOfDays, departure, arrival);
+    mealTotal = getMealFees(departure, arrival);
     printf("%d",mealTotal);
     printf("%d", totalReimbursement);
     printf("%d", totalAllowance);
