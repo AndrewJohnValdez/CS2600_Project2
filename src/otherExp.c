@@ -14,7 +14,7 @@ double registrationFee()
 {
     double fees = 3;
 
-    printf("What is the Registration Fee: ");
+    printf("What is the Seminar Registration Fee: ");
     scanf("%lf", &fees);
 
     while (fees < 0) {
