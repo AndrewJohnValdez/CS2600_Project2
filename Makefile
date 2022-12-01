@@ -1,12 +1,14 @@
+CC = gcc
 MAIN = src/travelExpenseMain.c
-TRAVELFEES = src/travelFees.c
-EXPENSES = src/expenses.c
-LODGING = src/milesDrivenLodgingParking.c
+INPUT = src/expenses.c
+OUTPUT = src/milesDrivenLodgingParking.c
+METHODS = src/travelFees.c
 
-all: output
+all: program
 
 program: src
-    gcc -o bin/output $(MAIN) $(EXPENSES) $(TRAVELFEES) $(LODGING)
+
+	$(CC) -o bin/program $(MAIN) $(INPUT) $(OUTPUT) $(METHODS)
 
 run: bin
-    bin/output.exe
+	bin/program.exe

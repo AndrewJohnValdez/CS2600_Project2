@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "../include/main.h"
+
 // get the parking fee
 double parkingFee(int days)
 {
