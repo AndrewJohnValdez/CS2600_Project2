@@ -2,13 +2,9 @@
     This File is created by Myo Muang
 */
 
-#ifndef EXPENSES_H
-#define EXPENSES_H
+#include "../include/main.h"
 #include <stdlib.h>
 #include <stdio.h>
-
-extern double totalHours(int, int, int);          // Myo's Function
-extern void convertDayAndHour(double);            // Myo's Functions
 
 double totalHours(int deperture, int arrival, int days)
 {
@@ -62,4 +58,3 @@ void convertDayAndHour(double hours)
 void displayTotalTime(int deperture, int arrival, int numberOfDays) {
 
 }
-#endif // EXPENSES_H
