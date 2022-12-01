@@ -1,8 +1,7 @@
-#ifndef MILESDRIVENLODGINGPARKING_H
-#define MILESDRIVENLODGINGPARKING_H
 #include <stdlib.h>
 #include <stdio.h>
-#include "expenses.h"
+#include "../include/main.h"
+
 // get the parking fee
 double parkingFee(int days)
 {
@@ -62,4 +61,3 @@ double milesDriven()
 
     return miles * 0.27;
 }
-#endif // MILESDRIVENLODGINGPARKING_H

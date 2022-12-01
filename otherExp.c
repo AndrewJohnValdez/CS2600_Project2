@@ -7,21 +7,22 @@
 #include <stdbool.h>
 #include <stdlib.h> 
 
-/*
+
 extern double registrationFee();
 extern double getMealFees();
 extern double mealTotal;
 extern double totalAllowance;
 extern double totalReimbursement;
 extern double totalAmountSaved;
-*/
 
+/*
 double mealTotal;
 double totalAllowance;
 double totalReimbursement;
 double totalAmountSaved;
+*/
 
-float registrationFee()
+double registrationFee()
 {
     double fees = 3;
 
@@ -150,7 +151,7 @@ double getMealFees(int departure_time, int arrival_time)
 
 }
 
-
+/*
 int main(){
     int dep = 600, arr = 1300;
     double fee;
@@ -164,3 +165,4 @@ int main(){
     printf("amount saved: $%.2lf\n", totalAmountSaved);
     return 0;
 }
+*/

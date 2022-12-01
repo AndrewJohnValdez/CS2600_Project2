@@ -4,10 +4,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "expenses.h"
-#include "travelFees.h"
-#include "milesDrivenLodgingParking.h"
-#include "otherExp.c"
+#include "../include/main.h"
 
 void displayResults(void);
 void setTravelValues(void);
@@ -37,14 +34,8 @@ double totalAmountSaved;
 int main(void) //main should only hold values that must be inputted
 {
     setTravelValues();
-    mealTotal = getMealFees(departure, arrival);
-    printf("%d",mealTotal);
-    printf("%d", totalReimbursement);
-    printf("%d", totalAllowance);
-    printf("%d", totalAmountSaved);
-    //setTravelValues();
-    //setFareValues();
-    //displayResults();
+    setFareValues();
+    displayResults();
 
     return EXIT_SUCCESS;
 }
@@ -83,7 +74,7 @@ void setFareValues(void) {
     testCarRental = carRental();
     testTaxi = taxiAmount();
     totalMiles = milesDriven();
-    registrationFees = registrationFee();
+    //registrationFees = registrationFee();
     totalHotelExpense = hotelExpense(numberOfDays);
     totalParkingFees = parkingFee(numberOfDays);
     mealTotal = getMealFees(departure, arrival);

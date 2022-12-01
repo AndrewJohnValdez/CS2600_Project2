@@ -1,17 +1,14 @@
-output: travelExpenseMain.o expenses.o travelFees.o milesDrivenLodgingParking.o
-	gcc travelExpenseMain.o -o output
+CC = gcc
+MAIN = src/travelExpenseMain.c
+EXPENSES = src/expenses.c
+MILES = src/milesDrivenLodgingParking.c
+TRAVELFEES = src/travelFees.c
 
-travelExpenseMain.o: travelExpenseMain.c
-	gcc -c travelExpenseMain.c
+all: program
 
-expenses.o: expenses.h
-	gcc -c expenses.h
+program: src
 
-travelFees.o: travelFees.h
-	gcc -c travelFees.h
+	$(CC) -o bin/program $(MAIN) $(EXPENSES) $(MILES) $(TRAVELFEES)
 
-milesDrivenLodgingParking.o: milesDrivenLodgingParking.h
-	gcc -c milesDrivenLodgingParking.h
-
-clean:
-	rm *.o output
+run: bin
+	bin/program.exe

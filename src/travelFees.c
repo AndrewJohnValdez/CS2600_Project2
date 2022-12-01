@@ -2,16 +2,9 @@
     This file is create by Allen Chiang
 */
 
-#ifndef TRAVELFEES_H
-#define TRAVELFEES_H
+#include "../include/main.h"
 #include <stdlib.h>
 #include <stdio.h>
-
-extern int getAmount();                           // Allen's Function
-extern double getTotal(double *cost, int length); // Allen's Function
-extern double airfareAmount();                    // Allen's Function
-extern double taxiAmount();                       // Allen's Function
-extern double carRental();                        // Allen's Function
 
 /* Allen's Implementation */
 
@@ -105,7 +98,7 @@ double taxiAmount()
         double doubleRead = 0;                                          // double for double read, set to 0 for while loop will run
         do                                                              // do while loop for getting cost of current day of taxi use, repeats question if negative number or string/char is inputted
         {
-            printf("Enter the cost of taxi fares of day %d (comapny covers $10.00 per day): ", i + 1);
+            printf("Input the cost of taxi fares of day %d (comapny covers $10.00 per day): ", i + 1);
             doubleRead = scanf("%lf", &currentCost);                    // get user input double, save in double read
             while (doubleRead != 1)                                     // while loop, if doubleRead invalid, ask for user input again
             {
@@ -168,5 +161,3 @@ double carRental()
     carRentalTotalCost += getTotal(totalCost, carRentalAmount);         // adds elements of totalCost array into TotalCost
     return carRentalTotalCost;
 }
-
-#endif // TRAVELFEES_H
