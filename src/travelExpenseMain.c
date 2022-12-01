@@ -60,13 +60,17 @@ void displayResults(void)
     printf("Total Milages Driven: $ %.2lf\n", totalMiles);
     printf("Total Lodging Fees: $ %.2lf\n", totalHotelExpense);
     printf("Taxi Parking Fees: $ %.2lf\n", totalParkingFees);
+    printf("Meal Total Fees: $%.2lf\n", mealTotal);
+    printf("Registration Fees: $ %.2lf\n", registrationFees);
     
+    printf("\n\t=====\n");
+    printf("\tTotal\n");
+    printf("\t=====\n");
     printf("TOTAL EXPENSES: %.2lf\n", grandTotal); 
     printf("TOTAL ALLOWABLE : $ %.2lf\n", totalAllowance);
     printf("TOTAL REIMBURSEMENT : $ %.2lf\n", totalReimbursement);
     printf("SAVED AMOUNT : $ %.2lf\n", totalAmountSaved);
 
-    //Incomplete NEED: meals eatern //must be tested
 }
 
 void setFareValues(void) {
@@ -74,19 +78,19 @@ void setFareValues(void) {
     testCarRental = carRental();
     testTaxi = taxiAmount();
     totalMiles = milesDriven();
-    //registrationFees = registrationFee();
+    registrationFees = registrationFee();
     totalHotelExpense = hotelExpense(numberOfDays);
     totalParkingFees = parkingFee(numberOfDays);
-    //mealTotal = getMealFees(numberOfDays, departure, arrival);
+    mealTotal = getMealFees(departure, arrival);
 
-    grandTotal = testAirfare + testCarRental + testTaxi + totalMiles + totalHotelExpense + totalParkingFees + registrationFees;
+    grandTotal = testAirfare + testCarRental + testTaxi + totalMiles + totalHotelExpense + totalParkingFees + registrationFees + mealTotal;
 
     hotelAllowance = (double)numberOfDays * 90.00;
     parkingAllowance = (double)numberOfDays * 6.00;
     totalMileDrivenAllowance = totalMiles;
     totalAllowance = hotelAllowance + parkingAllowance + totalMileDrivenAllowance + testAirfare + testCarRental;
     totalReimbursement = grandTotal - totalAllowance;
-    totalAmountSaved = totalAllowance - grandTotal; //meal cost can be added through h file implementation
+    totalAmountSaved = totalAllowance - grandTotal;
 }
 
 void setTravelValues(void) {

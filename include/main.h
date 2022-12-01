@@ -15,7 +15,8 @@ extern double calculateAllowableExpenses();
 
 //To be used in otherExp.c
 extern double registrationFee();
-extern void getMealFees();
+extern double getMealFees();
+
 
 //To be used in milesDrivenLodgingParking.c
 extern double parkingFee(int);
