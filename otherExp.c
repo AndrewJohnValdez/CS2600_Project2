@@ -26,35 +26,36 @@ float registrationFee()
     double fees = 3;
 
     printf("What is the Registration Fee: ");
-    scanf("%.2f", &fees);
+    scanf("%lf", &fees);
 
     while (fees < 0) {
         printf("Invalid Entry, Please Try Again\n");
-        scanf("%.2lf", &fees);
+        scanf("%lf", &fees);
     }
-    printf("%.2f", fees);
     return fees;
 }
 
 double getMealFees(int departure_time, int arrival_time)
 {
     const double ALLOWABLE_BREAKFAST = 9.00, ALLOWABLE_LUNCH = 12.00, ALLOWABLE_DINNER = 16.00;
-    char user_choice;
+    char user_choice, user_choice2;
     double meal_fee;
-    int key = -1;
 
     mealTotal = 0;
 
+    printf("departure time: %i\n", departure_time);
+    printf("arrival time: %i\n", arrival_time);
 
     printf("Did you eat a meal upon depature flight? (Y/N): ");
-    scanf("%c", user_choice);
+    scanf(" %c", &user_choice);
+    printf("\n");
     
 
     if (user_choice == 'Y' || user_choice == 'y')
     {
-        printf("How much was your meal? ");
-        scanf("%.2lf", meal_fee);
-
+        printf("How much was your meal? :");
+        scanf("%lf", &meal_fee);
+        printf("\n");
         mealTotal += meal_fee;
 
         if(departure_time < 700)
@@ -97,14 +98,15 @@ double getMealFees(int departure_time, int arrival_time)
 
     }
 
-    printf("Did you eat a meal when upon arrival flight? ");
-    scanf("%c", user_choice);
+    printf("Did you eat a meal when upon arrival flight? (Y|N): ");
+    scanf(" %c", &user_choice2);
     printf("\n");
 
-    if (user_choice == 'Y' || user_choice == 'y')
+    printf("%c\n", user_choice2);
+    if (user_choice2 == 'Y' || user_choice2 == 'y')
     {
-        printf("How much was your meal? ");
-        scanf("%.2lf", meal_fee);
+        printf("How much was your meal? : ");
+        scanf("%lf", &meal_fee);
         printf("\n");
 
         mealTotal += meal_fee;
@@ -156,6 +158,9 @@ int main(){
     fee = registrationFee();
     printf("fee is: %.2lf\n", fee);
     getMealFees(dep, arr);
-
+    printf("meal total: $%.2lf\n", mealTotal);
+    printf("allowance total: $%.2lf\n", totalAllowance);
+    printf("reimbursement total: $%.2lf\n", totalReimbursement);
+    printf("amount saved: $%.2lf\n", totalAmountSaved);
     return 0;
 }

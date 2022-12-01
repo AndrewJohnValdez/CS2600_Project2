@@ -86,7 +86,7 @@ void setFareValues(void) {
     registrationFees = registrationFee();
     totalHotelExpense = hotelExpense(numberOfDays);
     totalParkingFees = parkingFee(numberOfDays);
-    mealTotal = getMealFees(numberOfDays, departure, arrival);
+    mealTotal = getMealFees(departure, arrival);
 
     grandTotal = testAirfare + testCarRental + testTaxi + totalMiles + totalHotelExpense + totalParkingFees + registrationFees;
 
